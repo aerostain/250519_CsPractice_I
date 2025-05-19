@@ -12,3 +12,4 @@ Z:\R1ck7\Documents\2025\05May\d19\Csharp_Practice\obj\Debug\net8.0\refint\Csharp
 Z:\R1ck7\Documents\2025\05May\d19\Csharp_Practice\obj\Debug\net8.0\Csharp_Practice.pdb
 Z:\R1ck7\Documents\2025\05May\d19\Csharp_Practice\obj\Debug\net8.0\Csharp_Practice.genruntimeconfig.cache
 Z:\R1ck7\Documents\2025\05May\d19\Csharp_Practice\obj\Debug\net8.0\ref\Csharp_Practice.dll
+Z:\R1ck7\Documents\2025\05May\d19\Csharp_Practice\obj\Debug\net8.0\Csharp_Practice.sourcelink.json

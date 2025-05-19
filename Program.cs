@@ -4,13 +4,23 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<Empleados> empleados = new();
-        empleados.Add(new Empleados(1, "Vanessa"));
-        empleados.Add(new Empleados(2, "Cynthia"));
-        empleados.Add(new Empleados(3, "Amelia"));
+        // List<Empleados> empleados = new();
+        // empleados.Add(new Empleados(1, "Vanessa"));
+        // empleados.Add(new Empleados(2, "Cynthia"));
+        // empleados.Add(new Empleados(3, "Amelia"));
 
-        empleados.ForEach(x => x.VerEmpleados());
+        // empleados.ForEach(x => x.VerEmpleados());
+        Console.WriteLine($"{myFunc(100)}");
+        myAct("Hola");
+
     }
+
+    // Func es un delegado: encapsula un metodo con retorno.
+    static Func<int, double> myFunc = (x) => x * Math.PI;
+
+    // Action es un delegado: encapsula un metodo void.
+    static Action<string> myAct = (x) =>
+        Console.WriteLine($"Este es un Action y dice: {x}");
 
     public class Empleados
     {

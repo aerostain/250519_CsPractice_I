@@ -1,9 +1,24 @@
 # C# Practice
 
+## Practica 3
+
+
 ## Practica 2
-Func y Actions básico
+Func y Actions básico:
 
 ```csharp
+static void Main(string[] args)
+    {
+        Console.WriteLine($"{myFunc(100)}");
+        myAct("Hola");
+    }
+
+    // Func es un delegado: encapsula un metodo con retorno.
+    static Func<int, double> myFunc = (x) => x * Math.PI;
+
+    // Action es un delegado: encapsula un metodo void.
+    static Action<string> myAct = (x) =>
+        Console.WriteLine($"Este es un Action y dice: {x}");
 
 ```
 
