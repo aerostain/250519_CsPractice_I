@@ -1,18 +1,33 @@
-﻿namespace Csharp_Practice;
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace Csharp_Practice;
 
 class Program
 {
     static void Main(string[] args)
     {
-        // List<Empleados> empleados = new();
-        // empleados.Add(new Empleados(1, "Vanessa"));
-        // empleados.Add(new Empleados(2, "Cynthia"));
-        // empleados.Add(new Empleados(3, "Amelia"));
+        decimal total = 1000;
+        decimal discount = 0;
+        decimal tax = 0;
 
-        // empleados.ForEach(x => x.VerEmpleados());
-        Console.WriteLine($"{myFunc(100)}");
-        myAct("Hola");
+        var misActions = new Dictionary<Predicate<decimal>, Action>
+        {
+            {t=>t<10,()=>tax=total*.2m},
+            {t=>t>=10&t<100,()=>tax=total*.1m},
+            {t=>t>=100&t<1000,()=>discount=total*.2m},
+            {t=>t>=1000,()=>discount=total*.3m}
+        };
 
+        // foreach (var a in misActions)
+        // {
+        //     if (a.Key(total)) { a.Value(); break; }
+        // }
+
+        misActions
+            .FirstOrDefault(pair => pair.Key(total))
+            .Value?.Invoke();
+
+        Console.WriteLine($"{total + tax - discount}");
     }
 
     // Func es un delegado: encapsula un metodo con retorno.
