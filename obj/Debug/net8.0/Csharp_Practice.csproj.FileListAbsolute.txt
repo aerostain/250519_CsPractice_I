@@ -1,0 +1,14 @@
+Z:\R1ck7\Documents\2025\05May\d19\Csharp_Practice\bin\Debug\net8.0\Csharp_Practice.exe
+Z:\R1ck7\Documents\2025\05May\d19\Csharp_Practice\bin\Debug\net8.0\Csharp_Practice.deps.json
+Z:\R1ck7\Documents\2025\05May\d19\Csharp_Practice\bin\Debug\net8.0\Csharp_Practice.runtimeconfig.json
+Z:\R1ck7\Documents\2025\05May\d19\Csharp_Practice\bin\Debug\net8.0\Csharp_Practice.dll
+Z:\R1ck7\Documents\2025\05May\d19\Csharp_Practice\bin\Debug\net8.0\Csharp_Practice.pdb
+Z:\R1ck7\Documents\2025\05May\d19\Csharp_Practice\obj\Debug\net8.0\Csharp_Practice.GeneratedMSBuildEditorConfig.editorconfig
+Z:\R1ck7\Documents\2025\05May\d19\Csharp_Practice\obj\Debug\net8.0\Csharp_Practice.AssemblyInfoInputs.cache
+Z:\R1ck7\Documents\2025\05May\d19\Csharp_Practice\obj\Debug\net8.0\Csharp_Practice.AssemblyInfo.cs
+Z:\R1ck7\Documents\2025\05May\d19\Csharp_Practice\obj\Debug\net8.0\Csharp_Practice.csproj.CoreCompileInputs.cache
+Z:\R1ck7\Documents\2025\05May\d19\Csharp_Practice\obj\Debug\net8.0\Csharp_Practice.dll
+Z:\R1ck7\Documents\2025\05May\d19\Csharp_Practice\obj\Debug\net8.0\refint\Csharp_Practice.dll
+Z:\R1ck7\Documents\2025\05May\d19\Csharp_Practice\obj\Debug\net8.0\Csharp_Practice.pdb
+Z:\R1ck7\Documents\2025\05May\d19\Csharp_Practice\obj\Debug\net8.0\Csharp_Practice.genruntimeconfig.cache
+Z:\R1ck7\Documents\2025\05May\d19\Csharp_Practice\obj\Debug\net8.0\ref\Csharp_Practice.dll
