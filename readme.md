@@ -4,24 +4,75 @@
 Linq Básico:
 ```csharp
 static void Main(string[] args)
+{
+
+List<MiPersonal> mipersonal = new();
+mipersonal.Add(new MiPersonal(1, "Sandra", true));
+mipersonal.Add(new MiPersonal(2, "Susana", false));
+mipersonal.Add(new MiPersonal(3, "Sonia", true));
+mipersonal.Add(new MiPersonal(4, "Liliana", false));
+mipersonal.Add(new MiPersonal(5, "Karen", true));
+
+List<Region> regiones = new();
+regiones.Add(new Region(1, "Colombia"));
+regiones.Add(new Region(2, "Colombia"));
+regiones.Add(new Region(3, "Colombia"));
+regiones.Add(new Region(4, "Ecuador"));
+regiones.Add(new Region(5, "Peru"));
+
+// Predicado, útil para Where
+Action<MiPersonal> verE = (x) => Console
+.WriteLine($"Id: {x.Id} - Nombre: {x.Nombre}");
+
+// Select para modificar columna
+mipersonal
+.Select(x => x.Id + 100)
+.ToList()
+.ForEach(Console.WriteLine);
+
+// Select para crear nueva lista
+mipersonal
+.Select(x => new
+  {
+    x.Id,
+    x.EsFijo
+    }).ToList().ForEach(Console.WriteLine);
+
+// Select Where
+mipersonal
+.Where(x => x.EsFijo != true)
+.ToList()
+.ForEach(verE);
+
+mipersonal
+.Where(x => (x.Id == 1 | x.EsFijo == false))
+.ToList()
+.ForEach(x => Console.WriteLine($"Nombre: {x.Nombre}"));
+
+// Group By o Agrupaciones
+mipersonal
+.GroupBy(x => x.EsFijo)
+.Select(g => new
+ {
+  Fijo = g.Key,
+  Total = g.Count()
+  })
+  .ToList()
+  .ForEach(Console.WriteLine);
+
+// InnerJoin 2 listas 
+mipersonal.Join(regiones,
+  x => x.Id,
+  y => y.Id,
+  (x, y) => new
     {
+      Nombre = x.Nombre,
+      Pais = y.Pais
+    }).ToList().ForEach(Console.WriteLine);
+}
 
-        List<MiPersonal> mipersonal = new();
-        mipersonal.Add(new MiPersonal(1, "Sandra", true));
-        mipersonal.Add(new MiPersonal(2, "Susana", false));
-        mipersonal.Add(new MiPersonal(3, "Sonia", true));
-
-        Action<MiPersonal> verE = (x)=>Console
-        .WriteLine($"Id: {x.Id} - Nombre: {x.Nombre}");
-
-        mipersonal
-        .Where(x => x.EsFijo != true)
-        .ToList()
-        .ForEach(verE);
-
-    }
-
-    record MiPersonal(int Id, string Nombre, bool EsFijo);
+record MiPersonal(int Id, string Nombre, bool EsFijo);
+record Region(int Id, string Pais);
 ```
 
 ## Practica 5
