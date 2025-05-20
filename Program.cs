@@ -1,4 +1,6 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Data;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading.Tasks;
 
 namespace Csharp_Practice;
 
@@ -6,29 +8,23 @@ class Program
 {
     static void Main(string[] args)
     {
-        decimal total = 1000;
-        decimal discount = 0;
-        decimal tax = 0;
 
-        var misActions = new Dictionary<Predicate<decimal>, Action>
-        {
-            {t=>t<10,()=>tax=total*.2m},
-            {t=>t>=10&t<100,()=>tax=total*.1m},
-            {t=>t>=100&t<1000,()=>discount=total*.2m},
-            {t=>t>=1000,()=>discount=total*.3m}
-        };
+        List<MiPersonal> mipersonal = new();
+        mipersonal.Add(new MiPersonal(1, "Sandra", true));
+        mipersonal.Add(new MiPersonal(2, "Susana", false));
+        mipersonal.Add(new MiPersonal(3, "Sonia", true));
 
-        // foreach (var a in misActions)
-        // {
-        //     if (a.Key(total)) { a.Value(); break; }
-        // }
+        Action<MiPersonal> verE = (x)=>Console
+        .WriteLine($"Id: {x.Id} - Nombre: {x.Nombre}");
 
-        misActions
-            .FirstOrDefault(pair => pair.Key(total))
-            .Value?.Invoke();
+        mipersonal
+        .Where(x => x.EsFijo != true)
+        .ToList()
+        .ForEach(verE);
 
-        Console.WriteLine($"{total + tax - discount}");
     }
+
+    record MiPersonal(int Id, string Nombre, bool EsFijo);
 
     // Func es un delegado: encapsula un metodo con retorno.
     static Func<int, double> myFunc = (x) => x * Math.PI;

@@ -1,8 +1,56 @@
 # C# Practice
 
+## Practica 6
+Linq Básico:
+```csharp
+static void Main(string[] args)
+    {
+
+        List<MiPersonal> mipersonal = new();
+        mipersonal.Add(new MiPersonal(1, "Sandra", true));
+        mipersonal.Add(new MiPersonal(2, "Susana", false));
+        mipersonal.Add(new MiPersonal(3, "Sonia", true));
+
+        Action<MiPersonal> verE = (x)=>Console
+        .WriteLine($"Id: {x.Id} - Nombre: {x.Nombre}");
+
+        mipersonal
+        .Where(x => x.EsFijo != true)
+        .ToList()
+        .ForEach(verE);
+
+    }
+
+    record MiPersonal(int Id, string Nombre, bool EsFijo);
+```
+
+## Practica 5
+Crear una lista desde el 1 de tamaño 9 y llenarla con números aleatorios.
+
+```csharp
+// Se usa Select para cambiar el valor de una variable
+// x=>x=Func es igual a x=>Func
+
+Random numale = new();
+
+List<int> numsales = Enumerable
+.Range(0,10)
+.Select(x => numale.Next(0, 99))
+.ToList();
+
+numsales.ForEach(Console.WriteLine);
+```
+
+## Practica 4
+Aprendiendo predicados.
+* Siempre devuelve un booleano.
+* Predicate<T> es un delegado igual que Func<T,T> y Action<T>.
+* Excelentes para usar con Linq (Where, Find, FinAll, Exists, Any, All).
+* 
+
 ## Practica 3
-Reemplazar if por Actions usando un Dictionario.
-[Link_Copilot.](https://gemini.google.com/app/1415c62094d409c7?hl=es)
+Reemplazar IF por Actions usando un Dictionario de Predicados.
+* [Link_Copilot.](https://gemini.google.com/app/1415c62094d409c7?hl=es)
 
 ```csharp
 //Codigo original
